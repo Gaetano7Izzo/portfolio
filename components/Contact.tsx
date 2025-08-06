@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Github, Linkedin, Send, CheckCircle } from 'lucide-react'
-import emailjs from '@emailjs/browser'
 
 interface FormData {
   name: string
@@ -52,23 +51,20 @@ export default function Contact() {
     setIsSubmitting(true)
     
     try {
-      // Configurazione EmailJS
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
-        to_email: 'izzogaetanoemanuele@gmail.com'
-      }
+      // Invia email usando Formspree
+      const response = await fetch('https://formspree.io/f/myzpnrnj', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      })
 
-      // Invia email usando EmailJS
-      const result = await emailjs.send(
-        'service_uo914dw', // Il tuo Service ID
-        'template_udh8s4m', // Il tuo Template ID
-        templateParams,
-        'Ow7FQ3-WaWoZo642k' // La tua Public Key
-      )
-
-      if (result.status === 200) {
+      if (response.ok) {
         // Reset form
         setFormData({ name: '', email: '', message: '' })
         setIsSubmitted(true)
@@ -81,7 +77,7 @@ export default function Contact() {
       
     } catch (error) {
       console.error('Errore nell\'invio del messaggio:', error)
-      alert(`Errore specifico: ${error}`)
+      alert('Errore nell\'invio del messaggio. Riprova più tardi.')
     } finally {
       setIsSubmitting(false)
     }
