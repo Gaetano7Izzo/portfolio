@@ -81,7 +81,7 @@ export default function Contact() {
       
     } catch (error) {
       console.error('Errore nell\'invio del messaggio:', error)
-      alert('Errore nell\'invio del messaggio. Riprova più tardi.')
+      alert(`Errore specifico: ${error}`)
     } finally {
       setIsSubmitting(false)
     }
