@@ -5,9 +5,6 @@ const nextConfig = {
   images: {
     domains: ['avatars.githubusercontent.com'],
   },
-  trailingSlash: true,
-  output: 'export',
-  distDir: 'out',
 }
 
 module.exports = nextConfig 
