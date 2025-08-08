@@ -9,13 +9,13 @@
   }
   
   body {
-    @apply bg-white text-gray-900 font-sans;
+    @apply bg-white text-gray-900 font-sans overflow-x-hidden;
   }
 }
 
 @layer components {
   .section-padding {
-    @apply px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24;
+    @apply px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 scroll-mt-20;
   }
   
   .container-custom {

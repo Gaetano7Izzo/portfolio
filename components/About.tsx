@@ -17,13 +17,13 @@ const skills = {
 
 const languages = [
   { name: 'Italiano', level: 'Nativo' },
-  { name: 'Inglese', level: 'Avanzato (C1)' },
-  { name: 'Spagnolo', level: 'Intermedio (B2)' }
+  { name: 'Inglese', level: 'B2' },
+  { name: 'Spagnolo', level: 'B1' }
 ]
 
 const education = [
   {
-    degree: 'Laurea in Ingegneria Informatica',
+    degree: 'Laurea Triennale in Ingegneria Informatica',
     institution: 'Università degli Studi di Napoli Federico II',
     period: 'Set 2022 - Presente',
     description: 'Specializzazione in sistemi software e tecnologie web'

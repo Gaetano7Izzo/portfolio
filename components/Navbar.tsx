@@ -41,7 +41,7 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="container-custom">
+      <div className="container-custom px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <motion.div
@@ -49,7 +49,7 @@ export default function Navbar() {
             className="flex items-center space-x-2"
           >
             <span className="text-xl font-bold gradient-text">
-              Gaetano Izzo
+              Gaetano Emanuele Izzo
             </span>
           </motion.div>
 
@@ -88,7 +88,7 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden border-t border-gray-200 bg-white"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="px-4 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <motion.button
                   key={item.name}
